@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3BC39BF8-D6B4-41D3-8106-028BE3425CDE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="FString.cs" />
+    <Compile Include="Abstracts\FConfigCache.cs" />
+    <Compile Include="Abstracts\FContextSupplier.cs" />
+    <Compile Include="Abstracts\FExec.cs" />
+    <Compile Include="Abstracts\FFeedbackContext.cs" />
+    <Compile Include="Abstracts\FMalloc.cs" />
+    <Compile Include="Abstracts\FNotifyHook.cs" />
+    <Compile Include="Abstracts\FOutputDevice.cs" />
+    <Compile Include="Abstracts\FOutputDeviceError.cs" />
+    <Compile Include="Abstracts\FTime.cs" />
+    <Compile Include="FArchive.cs" />
+    <Compile Include="Abstracts\FTransactionBase.cs" />
+    <Compile Include="Abstracts\FFileManager.cs" />
+    <Compile Include="FCodec.cs" />
+    <Compile Include="TArray.cs" />
+    <Compile Include="FBitWriter.cs" />
+    <Compile Include="FBitReader.cs" />
+    <Compile Include="FBufferReader.cs" />
+    <Compile Include="FBufferWriter.cs" />
+    <Compile Include="UObject.cs" />
+    <Compile Include="FName.cs" />
+    <Compile Include="FLazyLoader.cs" />
+    <Compile Include="FCompactIndex.cs" />
+    <Compile Include="FMemStack.cs" />
+    <Compile Include="USystem.cs" />
+    <Compile Include="UProperty.cs" />
+    <Compile Include="USubsystem.cs" />
+    <Compile Include="FGlobalMath.cs" />
+    <Compile Include="URenderDevice.cs" />
+    <Compile Include="Abstracts\TMultimap.cs" />
+    <Compile Include="Abstracts\EName.cs" />
+    <Compile Include="Abstracts\FArray.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Abstracts\" />
+  </ItemGroup>
+</Project>
