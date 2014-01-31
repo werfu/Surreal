@@ -1,46 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Core/Global.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Core/Abstracts/AApp.cs">
     <Files>
-      <File FileName="Core/FArchive.cs" Line="76" Column="69" />
-      <File FileName="Core/Global.cs" Line="22" Column="3" />
-      <File FileName="Core/FCompactIndex.cs" Line="14" Column="18" />
-      <File FileName="Core/Abstracts/FConfigCache.cs" Line="14" Column="24" />
-      <File FileName="Core/Abstracts/TMultimap.cs" Line="9" Column="1" />
-      <File FileName="Core/Abstracts/EName.cs" Line="9" Column="2" />
-      <File FileName="Core/Abstracts/FTransactionBase.cs" Line="8" Column="54" />
-      <File FileName="Core/Abstracts/FArray.cs" Line="5" Column="9" />
-      <File FileName="Core/Abstracts/FFileManager.cs" Line="7" Column="122" />
-      <File FileName="Core/Abstracts/FTime.cs" Line="35" Column="25" />
-      <File FileName="Core/TArray.cs" Line="53" Column="30" />
-      <File FileName="Core/FCodec.cs" Line="441" Column="12" />
-      <File FileName="Core/FBitReader.cs" Line="1" Column="1" />
-      <File FileName="Core/FBufferReader.cs" Line="11" Column="3" />
+      <File FileName="Core/Abstracts/AApp.cs" Line="192" Column="1" />
+      <File FileName="Core/FCodec.cs" Line="230" Column="28" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Core" expanded="True">
-            <Node name="Abstracts" expanded="True" />
-            <Node name="Global.cs" selected="True" />
-          </Node>
-          <Node name="Engine" expanded="True" />
-          <Node name="System" expanded="True" />
-        </State>
-      </Pad>
-      <Pad Id="ClassPad">
-        <State expanded="True" selected="True" />
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
-      <Pad Id="ConnectionManagerPad">
-        <State selected="True" />
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/home/max/Surreal/Core/FCodec.cs" line="249" column="38" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

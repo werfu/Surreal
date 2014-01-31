@@ -1,4 +1,5 @@
 using System;
+using Core;
 
 namespace Surreal.Core
 {
@@ -39,15 +40,17 @@ namespace Surreal.Core
 	public delegate void FuncDelegate();
 	public delegate FConfigCache FConfigCacheDelegate();
 
-	public static class Global {
+	public static partial class Global {
 		public static int INDEX_NONE = -1;
 		public static int PACKAGE_FILE_VERSION;
 		public static int ENGINE_NEGOTIATION_VERSION;
 		public static int PACKAGE_FILE_VERSION_LICENSEE;
 
+		public static AApp App;
+
 		#region Global Vars
 		public static FMemStack 			GMem;
-		public static FOutputDevice 		GNull;
+		public const FOutputDevice 		GNull = null;
 		public static FOutputDevice			GLog;
 		public static FOutputDevice		    GThrow;
 		public static FOutputDeviceError	GError;
@@ -93,25 +96,8 @@ namespace Surreal.Core
 		public static URenderDevice			GRenderDevice;
 		public static FArchive         		GDummySave;
 		public static UInt16				GCurrentViewport;
-		public static string				GPackage;
-		#endregion
-
-		#region Global Init and exit.
-		public static void appInit ( string InPackage, string InCmdLine, ref FMalloc InMalloc, ref FOutputDevice InLog, ref FOutputDeviceError InError, ref FFeedbackContext InWarn, ref FFileManager InFileManager, FConfigCacheDelegate ConfigFactory, bool RequireConfig)
-		{}
-
-		public static void appPreExit() {}
-		public static void appExit () {}
-		#endregion
-
-		#region Logging and critical errors.
-		public static void appRequestExit (bool Force) {}
-		public static void appFailAssert( string Expr, string File, int Line, params object[] argsRest ) {}
-		public static void appUnwindf (string fmt, params object[] argsRest) {}
-		public static string appGetSystemErrorMessage (int Error = 0) {}
-		public static void appDebugMessagef( string fmt, params object[] argsRest) {}
-		public static void appMsgf( string fmt, params object[] argsRest) {}
-		public static void appGetLastError() {}
+		public const string					GPackage = "GPackage";
+		public static UInt16[]				GCRCTable;
 		#endregion
 
 		#region Macros Replacement
@@ -145,6 +131,9 @@ namespace Surreal.Core
 			else
 				return (b >> 24) + ((b >> 8) & 0xff00) + ((b << 8) & 0xff0000) + (b << 24);
 		}
+
+
+
 		#endregion
 	}
 }

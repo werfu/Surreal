@@ -36,7 +36,7 @@ namespace Surreal.Core
 			this.ArForServer = false;
 		}
 
-		public static T Arctor<T>(ref FArchive Ar)
+		public static T Arctor<T>(ref FArchive Ar) where T : new()
 		{
 			T tmp = new T();
 			Ar.Put (tmp);

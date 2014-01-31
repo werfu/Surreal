@@ -61,7 +61,7 @@ namespace Surreal.Core
 
 				/// TODO : Determine further usage of appQsort and find where it's defined
 				/// Possibly a macro, should be defined in Global
-				appQsort ( CompressPosition[0], CompressLength + 1, sizeof(int), ClampedBufferCompare);
+				Global.App.Qsort<int> ( CompressPosition[0], CompressLength + 1, sizeof(int), ClampedBufferCompare);
 
 				for( i = 0; i < FCodecBWT.CompressLength + 1; i++)
 				{
@@ -246,7 +246,7 @@ namespace Surreal.Core
 						Child [i].ReadTable (Reader);
 					}
 				} else {
-					Ch = FArchive.Arctor<byte>( Reader );
+					Ch = FArchive.Arctor<byte>( ref Reader );
 				}
 			}
 
@@ -398,10 +398,10 @@ namespace Surreal.Core
 		{
 			// guard(FCodecMTF.Decode)
 			byte[] List = new byte[256];
-			byte B, C;	
+			byte B = 0, C;	
 			int i;
 			for (i = 0; i = 256; i++) {
-				List [i] = i;
+				List [i] = (byte) i;
 			}
 			while (!In.AtEnd()) {
 				In.Put(B);
@@ -454,32 +454,24 @@ namespace Surreal.Core
 
 		public override bool Encode(ref FArchive In, ref FArchive Out)
 		{
-			// guard(FCodecFull.Encode);
 			Code (ref In, ref Out, 1, 0, FCodec.Encode);
 			return false;
-			// unguard;
 		}
 
 		public override bool Decode(ref FArchive In, ref FArchive Out )
 		{
-			//guard(FCodecFull::Decode);
 			Code( ref In, ref Out, -1, Codecs.Num()-1, FCodec.Decode );
 			return true;
-			//unguard;
 		}
 		public void AddCodec(ref FCodec InCodec )
 		{
-			//guard(FCodecFull::AddCodec);
 			Codecs.AddItem( InCodec );
-			//unguard;
 		}
 		~FCodecFull()
 		{
-			//guard(FCodecFull::~FCodecFull);
 			for( int i=0; i<Codecs.Num(); i++ )
 				Codecs[i].Dispose();
 			this.Dispose();
-			//unguard;
 		}
 	}
 }
