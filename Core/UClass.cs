@@ -3,7 +3,7 @@ using Surreal.Core;
 using System.Reflection;
 using System.Diagnostics;
 
-namespace Core
+namespace Surreal.Core
 {
 	public class UClass
 	{

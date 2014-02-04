@@ -33,6 +33,12 @@ namespace Surreal.Core
 		FILEREAD_NoFail             = 0x01,
 	}
 
+	public enum EConstructorType {
+		ENativeConstructor,
+		EStaticConstructor,
+		EInPlaceConstructor
+	}
+
 	public delegate void STRUCT_AR (ref FArchive Ar, IntPtr TPtr);
 	public delegate void STRUCT_DTOR ( IntPtr TPtr );
 
